@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/presentation/screens/counter/counter_screen.dart';
 
 void main(){
   runApp(const MyApp()); // empieza desde el main como la mayoria de lenguajes.
@@ -8,13 +9,13 @@ class MyApp extends StatelessWidget{
 
   const MyApp({super.key});
 
-  // Todos los StatelessWidget necesitan este build
-  // regresa un widget.
   @override
   Widget build(BuildContext context) {
     // Una clase de marialApp
-    return const MaterialApp(
-      home:  Center(child: Text('HOLA MUNDO')), // el center centra todos los hijos.
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true,colorSchemeSeed: Colors.amber),
+      home: const CounterScreen(),
     );
   }
 }
