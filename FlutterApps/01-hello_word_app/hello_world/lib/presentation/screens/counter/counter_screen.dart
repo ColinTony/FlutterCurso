@@ -16,6 +16,13 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () => {
+            setState(() {
+              clicks = 0;
+            })
+          }, icon: const Icon(Icons.refresh))
+        ],
         title: const Center(child: Text("CONTADOR")),
       ),
       body: Center(child: Column(
@@ -24,17 +31,21 @@ class _CounterScreenState extends State<CounterScreen> {
           Text( 
             "$clicks" ,
              style: const TextStyle(fontSize: 160 , fontWeight: FontWeight.w100)),
-          const Text("Clicks" , style: TextStyle(fontSize: 25))
+            Text((clicks <= 1)? 'Click' : 'Clicks', style: const TextStyle(fontSize: 25))
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          setState(() {
-            clicks++;
-          });
-      },
-      child: const Icon(Icons.plus_one),
-      ),
+      floatingActionButton: Column(
+        children: [
+          FloatingActionButton(
+            onPressed: (){
+              setState(() {
+                clicks++;
+              });
+          },
+          child: const Icon(Icons.plus_one),
+          ),
+        ],
+      )
     );
   }
 }
