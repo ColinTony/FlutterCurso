@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-final List<Color> _colores = [Colors.black,Colors.red , Colors.yellow,Colors.pink,Colors.green];
+final List<Color> _colores = [Colors.blue,Colors.black38,Colors.black,Colors.red , Colors.yellow,Colors.pink,Colors.green];
 
 
 class AppTheme {
